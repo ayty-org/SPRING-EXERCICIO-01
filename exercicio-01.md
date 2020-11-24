@@ -28,6 +28,8 @@ Os tipos de contas disponíveis serão Consumidor (Consumer) e Lojista (Seller).
 
 Seu sistema deve ser capaz de listar todos os usuários, além de conseguir trazer informações detalhadas de um usuário específico. Durante a listagem, deve ser possível filtrar os resultados por Nome ou Username. Para fins didáticos, sua busca deve considerar apenas resultados que comecem com a string especificada na busca. Como exemplo, GET /users?q=joao deve retornar apenas Usuários cujos Nomes ou Usernames comecem com a string joao. Não há a necessidade de lidar com acentos. Por fim seu sistema também deve poder atualizar o nome do usuário e também deletar todas suas informações do sistema.
 
+_Para fins de estudo e facilitar no desen recomenda-se utilizar o H2 database, caso se interesse acesse o mvnrepository, busque por H2 database e por fim adicione a dependência maven no seu pom.xml. O H2 um sistema de gerenciamento de banco de dados relacional escrito em Java. Ele pode ser incorporado em aplicativos Java ou executado no modo cliente-servidor, possui várias ferramentas como uma interface de administração web com Auto Completion para SQL._
+
 ### Arquitetura
 
 A seguinte arquitetura é sugerida: 
