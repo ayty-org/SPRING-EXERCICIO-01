@@ -53,25 +53,16 @@ A seguinte arquitetura é sugerida:
     "cpf":"123456789",
 }
 ```
-#### Response - 200 OK
+#### Response - 201 Created
 ```json
-{
-    "status":"OK",
-    "message":"User created",
-    "payload":{
-        "id": 1,
-        "fullname":"Clebson Augusto Fonseca",
-        "email":"clebson.augusto@dcx.upfb.br",
-        "password":"123456",
-        "cpf":"123456789"
-    }
-}
+
 ```
-#### Response - 403 Already exists
+
+#### Response - 400 Bad Request
 ```json
 {
-    "status":"NOT_FOUND",
-    "message":"User already exists",
+    "status":"BAD_REQUEST",
+    "message":"Requisição invalida",
 }
 ```
 #
@@ -85,23 +76,16 @@ A seguinte arquitetura é sugerida:
     "username":"clebson",
 }
 ```
-#### Response - 200 OK
+#### Response - 201 Created
 ```json
-{
-    "status":"OK",
-    "message":"Consumer created",
-    "payload":{
-        "id": 1,
-        "user_id": 1,
-        "username": "clebson"
-    }
-}
+
 ```
-#### Response - 403 Already exists
+
+#### Response - 400 Bad Request
 ```json
 {
-    "status":"NOT_FOUND",
-    "message":"Consumer already exists",
+    "status":"BAD_REQUEST",
+    "message":"Bad request",
 }
 ```
 #
@@ -117,26 +101,14 @@ A seguinte arquitetura é sugerida:
     "username": "loja_do_clebson"
 }
 ```
-#### Response - 200 OK
+#### Response - 200 Created
+
+
+#### Response - 400 Bad Request
 ```json
 {
-    "status":"OK",
-    "message":"Consumer created",
-    "payload":{
-        "id": 1,
-        "user_id": 1,
-        "cnpj": "123456789",
-        "fantasy_name": "Hiper Loja do clebson",
-        "social_name": "Loja do clebson LTDA",
-        "username": "loja_do_clebson"
-    }
-}
-```
-#### Response - 403 Already exists
-```json
-{
-    "status":"NOT_FOUND",
-    "message":"Seller already exists",
+    "status":"BAD_REQUEST",
+    "message":"Requisição invalida",
 }
 ```
 #
@@ -144,9 +116,7 @@ A seguinte arquitetura é sugerida:
 
 
 #### GET localhost:8080/api/users/1
-```json
 
-```
 #### Response - 200 OK
 ```json
 {
@@ -156,7 +126,6 @@ A seguinte arquitetura é sugerida:
         "id": 1,
         "fullname":"Clebson Augusto Fonseca",
         "email":"clebson.augusto@dcx.upfb.br",
-        "password":"123456",
         "cpf":"123456789",
         "accounts": {
             "consumer": {
@@ -192,27 +161,16 @@ A seguinte arquitetura é sugerida:
     "fullname":"Clebson Fonseca",
 }
 ```
-#### Response - 200 OK
+#### Response - 204 No Content
 ```json
-{
-    "status":"OK",
-    "message":"User updated",
-    "payload":{
-        "id": 1,
-        "fullname":"Clebson Fonseca",
-        "email":"clebson.augusto@dcx.upfb.br",
-        "password":"123456",
-        "cpf":"123456789"
 
-
-    }
-}
 ```
-#### Response - 404 NOT FOUND
+
+#### Response - 400 Bad Request
 ```json
 {
-    "status":"NOT_FOUND",
-    "message":"User not found",
+    "status":"BAD_REQUEST",
+    "message":"Requisição invalida",
 }
 ```
 #
@@ -222,34 +180,9 @@ A seguinte arquitetura é sugerida:
 ```json
 
 ```
-#### Response - 200 OK
+#### Response - 204 No Content
 ```json
-{
-    "status":"OK",
-    "message":"User deleted",
-    "payload":{
-        "username":"Clebsonf",
-        "fullname":"Clebson Augusto Fonseca",
-        "email":"clebson.augusto@dcx.upfb.br",
-        "password":"123456",
-        "cpf":"123456789",
-        "accounts": {
-            "consumer": {
-                "id": 1,
-                "user_id": 1,
-                "username": "clebson"
-            },
-            "seller": {
-                "cnpj": "123456789",
-                "fantasy_name": "Hiper Loja do clebson",
-                "id": 1,
-                "social_name": "Loja do clebson LTDA",
-                "user_id": 1,
-                "username": "loja_do_clebson"
-            }
-        }
-    }
-}
+
 ```
 #### Response - 404 NOT FOUND
 ```json
